@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router";
+import { ThemeProvider } from "styled-components";
+import { LightMode } from "./themes/LightTheme";
+import { DarkMode } from "./themes/DarkTheme";
+import GlobalStyles from "./globalStyles"
+import Main from "./routes/Main";
+import AboutPage from "./routes/AboutPage";
+import SkillsPage from "./routes/SkillsPage";
+import VideosPage from "./routes/VideosPage";
+import ExperiencesPage from "./routes/ExperiencesPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  return <>
+      <GlobalStyles />
+      <ThemeProvider theme={LightMode}>
+        <Routes>
+          <Route exact path="/" element={<Main/>}/>
+          <Route exact path="/about" element={<AboutPage />}/>
+          <Route exact path="/skills" element={<SkillsPage />}/>
+          <Route exact path="/videos" element={<VideosPage />}/>
+          <Route exact path="/experiences" element={<ExperiencesPage />}/>
+
+        </Routes>
+      </ThemeProvider>
+    </>
+  
 }
 
 export default App;
