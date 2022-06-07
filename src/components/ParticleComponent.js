@@ -3,7 +3,7 @@ import Particles from 'react-tsparticles';
 import { loadFull } from "tsparticles";
 import styledComponents from 'styled-components'
 
-import presetParticles from "../config/tsparticles-presets/char.json"
+// import presetParticles from "../config/tsparticles-presets/char.json"
 
 const Container = styledComponents.div`
     position: absolute;
@@ -20,14 +20,12 @@ const ParticleComponent = (props) => {
         console.log(main);
         await loadFull(main);
     }
-
     return (
         <Container>
           <Particles 
           id="tsparticles"   
           init={particlesInit} 
-          options={presetParticles} />
-
+          options={props.preset} />
         </Container>
     )
 }
