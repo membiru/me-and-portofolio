@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import styled from 'styled-components'
-import imgProfile from '../assets/images/profile-img.png'
+import imgProfile from '../assets/images/profile-img-blue.png'
 
 
 const BorderContainer = styled(motion.div)`
@@ -15,16 +15,16 @@ const BorderContainer = styled(motion.div)`
 
     background: linear-gradient(
             to right,
-            black 50%,
-            white 50%
+            ${props => props.theme.primary} 50%,
+            ${props => props.theme.secondary} 50%
         ) bottom,
         linear-gradient(
             to right,
-            black 50%,
-            white 50%
+            ${props => props.theme.primary} 50%,
+            ${props => props.theme.secondary} 50%
         ) top;
-    border-left: 2px solid ${props => props.theme.text};
-    border-right: 2px solid ${props => props.theme.text};
+    border-left: 2px solid ${props => props.theme.primary};
+    border-right: 2px solid ${props => props.theme.secondary};
     
     background-repeat: no-repeat;
     background-size: 100% 2px;
@@ -49,7 +49,7 @@ const Container = styled.div`
 
 const TextContainer = styled.div`
     font-size: calc(1rem + 1.5vw);
-    color: ${props => props.theme.text};
+    color: ${props => props.theme.primary};
     padding: 2rem;
 
     display: flex;  
@@ -57,7 +57,7 @@ const TextContainer = styled.div`
     justify-content: space-evenly;
 
     &>*:last-child {
-        color: ${props => props.theme.secondary};
+        color: ${props => props.theme.primary};
         font-size: calc(0.5rem + 1.5vw);
         font-weight: 300;
     }
@@ -72,7 +72,7 @@ const IntroComponent = () => {
     >
         <Container>
             <TextContainer>
-                <h1>SUP ?,</h1>
+                <h1>SUP,</h1>
                 <h3>I'm Rizky Ananda.</h3>
                 <h6>Like, learn and will always learn programming, design, and also Android.</h6>
             </TextContainer>

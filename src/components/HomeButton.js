@@ -9,12 +9,13 @@ const HomeButtonContainer = styled.div`
   left: 50%;
   position: fixed;
   transform: translate(-50%, 0);
-  padding:0.5rem;
+  padding: 0.5rem 0.3rem 0.3rem 0.3rem;
   display: flex;
   justify-content: center;
 
-  background-color: #2B7A78;
+  background-color: ${props => props.theme.secondary};
   border-radius: 50%;
+  border: 3px solid ${props => props.theme.secondary};
   width: 2rem;
   height: 2rem;
   
@@ -22,9 +23,15 @@ const HomeButtonContainer = styled.div`
   z-index: 3;
   align-items: center;
 
+  &>*{
+    fill: ${props => props.theme.primary};
+  }
   &:hover {
-    background-color: #2B7A78;
-    box-shadow: 0 0 0.4rem 0.1rem #17252A;
+    &>*{
+      fill: ${props => props.theme.secondary};
+    }
+    background-color: ${props => props.theme.primary};
+
   }
 
   &>*:first-child {
@@ -37,7 +44,7 @@ const HomeButton = () => {
   return (
     <HomeButtonContainer>
       <NavLink to="/">
-        <HomeLogo width={32} height={32} fill='#17252A'/>
+        <HomeLogo width={32} height={32} />
       </NavLink>
     </HomeButtonContainer>
   )

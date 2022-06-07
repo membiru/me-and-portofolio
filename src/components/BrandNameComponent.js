@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const NameStyle = styled.h1`
     font-family: 'Arial Black', sans-serif;
-    color: ${props => props.theme.text};
+    color: ${props => props.color === 'dark' ? props.theme.secondary : props.theme.primary};
     display: inline-block;
 
     position: fixed;
@@ -12,10 +12,10 @@ const NameStyle = styled.h1`
     z-index: 3;
 `
 
-const BrandNameComponent = () => {
+const BrandNameComponent = (props) => {
   return (
-    <NameStyle>
-        .MEM<br/>BIRU
+    <NameStyle color={props.theme}>
+        MEM<br/>BIRU
     </NameStyle>
   )
 }

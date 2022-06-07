@@ -1,15 +1,18 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
-import { LightMode } from '../themes/Theme'
+import { myTheme } from '../themes/Theme'
 import { DesignLogo, DevelopeLogo } from '../components/Svgs'
 import BrandNameComponent from '../components/BrandNameComponent'
 import SocialMedIcons from '../components/SocialMedIcons'
 import HomeButton from '../components/HomeButton'
 import ParticleComponent from '../components/ParticleComponent'
 
+import presetParticles from "../config/tsparticles-presets/char.json"
+
+
 const Container = styled.div`
-  background: ${props => props.theme.body};
+  background: ${props => props.theme.secondary};
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -18,9 +21,9 @@ const Container = styled.div`
   align-items: center;
 `
 const Grid = styled.div`
-  border: 2px solid ${props => props.theme.secondary};
-  color: ${props => props.theme.text};
-  background: ${props => props.theme.body};
+  border: 2px solid ${props => props.theme.primary};
+  color: ${props => props.theme.primary};
+  background: ${props => props.theme.secondary};
   padding: 2rem;
   width: 30vw;
   height: 60vh;
@@ -35,8 +38,8 @@ const Grid = styled.div`
   z-index: 3;
 
   &:hover{
-    color: ${props => props.theme.body};
-    background: ${props => props.theme.text};
+    color: ${props => props.theme.secondary};
+    background: ${props => props.theme.primary};
   }
 `
 const TitleContent = styled.h2`
@@ -44,10 +47,10 @@ const TitleContent = styled.h2`
   justify-content: center;
   align-items: center;
   font-size: calc(1em + 1vw);
-
+  fill: ${props => props.theme.primary};
   ${Grid}: hover &{
     &>*{
-      fill: ${props => props.theme.body};
+      fill: ${props => props.theme.secondary};
     }
   }
 
@@ -56,7 +59,7 @@ const TitleContent = styled.h2`
   }
 `
 const DescContent = styled.div`
-  color: ${props => props.theme.text};
+  color: ${props => props.theme.primary};
   font-size: calc(0.5em + 1vw);
   padding: 0.5rem 0;
 
@@ -69,7 +72,7 @@ const DescContent = styled.div`
   }
 
   ${Grid}: hover &{
-    color: ${props => props.theme.body};
+    color: ${props => props.theme.secondary};
   }
 `
 
@@ -77,16 +80,16 @@ const DescContent = styled.div`
 
 const SkillsPage = () => {
   return (
-    <ThemeProvider theme={LightMode}>
+    <ThemeProvider theme={myTheme}>
       <BrandNameComponent theme='light'/>
       <SocialMedIcons theme='light'/>
       <HomeButton /> 
-      <ParticleComponent theme='light' />
+      <ParticleComponent preset={presetParticles} />
 
       <Container>
         <Grid>
           <TitleContent>
-            <DevelopeLogo width={36} height={36} /> Programmer
+            <DevelopeLogo width={36} height={36}/> Programmer
           </TitleContent>
           
           <DescContent>

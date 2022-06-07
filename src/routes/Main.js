@@ -12,7 +12,7 @@ import IntroComponent from '../components/IntroComponent'
 
 
 const MainContainer = styled.div`
-  background: ${props => props.theme.body};
+  background: ${props => props.theme.secondary};
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -20,7 +20,7 @@ const MainContainer = styled.div`
 
   h2,h3,h4,h5,h6{
     font-family: 'Karla', sans-serif;
-    font-weight: 500;
+    font-weight: 800;
   }
 `
 const Container = styled.div`
@@ -29,7 +29,7 @@ const Container = styled.div`
 
 const ButtonContact = styled.a`
   position: absolute;
-  color: ${props => props.theme.text};
+  color: ${props => props.isClick? props.theme.secondary: props.theme.primary};
   text-decoration: none;
 
   top: 2rem;
@@ -38,7 +38,7 @@ const ButtonContact = styled.a`
 `
 
 const ButtonVideos = styled(NavLink)`
-  color: ${props => props.isClick ? props.theme.secondary : props.theme.text};
+  color: ${props => props.isClick ? props.theme.secondary : props.theme.primary};
   text-decoration: none;
   position: absolute;
 
@@ -49,7 +49,7 @@ const ButtonVideos = styled(NavLink)`
 `
 
 const ButtonExperiences = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: ${props => props.theme.primary};
   text-decoration: none;
   position: absolute;
 
@@ -71,12 +71,12 @@ const FooterContainer = styled.div`
 `
 
 const ButtonSkills = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: ${props => props.theme.primary};
   text-decoration: none;
   z-index: 1;
 `
 const ButtonAbout = styled(NavLink)`
-  color: ${props => props.isClick ? props.theme.secondary : props.theme.text};
+  color: ${props => props.isClick ? props.theme.secondary : props.theme.primary};
   text-decoration: none;
   z-index: 1;
 `
@@ -93,7 +93,7 @@ const rotate = keyframes`
 const CenterImage = styled.button`
   position: absolute;
   top: ${props => props.isClick ? '85%' : '50%'};
-  left: ${props => props.isClick ? '50%' : '50%'};
+  left: ${props => props.isClick ? '8%' : '50%'};
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
@@ -109,17 +109,21 @@ const CenterImage = styled.button`
   z-index: 3;
   &>:first-child{
     animation: ${rotate} 3s linear infinite;
+    fill: ${props => props.theme.primary};
   }
 
   &>:last-child{
     display: ${props => props.isClick ? 'none' : 'inline-block'};
-    padding-top: 1rem;
+    padding-top: 0rem;
+    font-size: calc(0.2rem + 1vw);
+    font-weight: 100;
+    color: ${props => props.theme.primary};
   }
 `
 
 const DarkContainer = styled.div`
   position: absolute;
-  background: #000;
+  background: ${props => props.theme.primary};
   top: 0;
   bottom: 0;
   width: ${props => props.isClick ? '50%' : '0%'};
@@ -143,12 +147,12 @@ const Main = () => {
         <HomeButton />
         <BrandNameComponent />
         <SocialMedIcons theme={click? 'dark': 'light'}/>
-        <CenterImage isClick={click}>
-          <MainLogo onClick={()=>handleClick()} width={click ? 80: 220} height={click ? 80: 220} fill='violet'/>
+        <CenterImage onClick={()=>handleClick()} isClick={click}>
+          <MainLogo width={click ? 100: 250} height={click ? 100: 250} />
           <span>touch me</span>
         </CenterImage>
 
-        <ButtonContact target="_blank" href="mailto:rizkyananda007@gmail.com" rel="noopener noreferrer">
+        <ButtonContact isClick={click} target="_blank" href="mailto:rizkyananda007@gmail.com" rel="noopener noreferrer">
           <motion.h2 
           whileHover={{scale: 1.4}}
           whileTap={{scale: 0.9}}

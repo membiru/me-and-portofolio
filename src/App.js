@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from "react-router";
 import { ThemeProvider } from "styled-components";
-import { LightMode } from "./themes/Theme";
+import { myTheme } from "./themes/Theme";
 import GlobalStyles from "./globalStyles"
 
 //Routes are used to render different components based on the pathname
@@ -15,7 +15,7 @@ const App = () => {
 
   return <>
       <GlobalStyles />
-      <ThemeProvider theme={LightMode}>
+      <ThemeProvider theme={myTheme}>
         <Routes location={location} key={location.pathname}>
           <Route exact path="/" element={<Main/>}/>
           <Route exact path="/about" element={<AboutPage />}/>
