@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const LogoStyle = styled.h1`
+const NameStyle = styled.h1`
     font-family: 'Arial Black', sans-serif;
     color: ${props => props.theme.text};
     display: inline-block;
@@ -12,12 +12,12 @@ const LogoStyle = styled.h1`
     z-index: 3;
 `
 
-const LogoComponent = () => {
+const BrandNameComponent = () => {
   return (
-    <LogoStyle>
+    <NameStyle>
         .MEM<br/>BIRU
-    </LogoStyle>
+    </NameStyle>
   )
 }
 
-export default LogoComponent
+export default BrandNameComponent

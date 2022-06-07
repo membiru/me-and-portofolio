@@ -1,5 +1,4 @@
 {
-  "homepage": "rizkyananda.github.io/me-and-portofolio",
   "name": "me-and-portofolio",
   "version": "0.1.0",
   "private": true,
@@ -8,21 +7,20 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^6.3.10",
+    "gh-pages": "^4.0.0",
     "normalize.css": "^8.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-tsparticles": "^2.0.6",
     "styled-components": "^5.3.5",
     "tsparticles": "^2.0.6",
-    "web-vitals": "^2.1.4",
-    "webpack": "^5.73.0",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.9.1"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -45,9 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "file-loader": "^6.2.0",
-    "gh-pages": "^4.0.0"
   }
 }

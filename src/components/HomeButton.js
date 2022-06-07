@@ -13,9 +13,8 @@ const HomeButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  background-color: #3AAFA9;
-  border: 3px solid #2B7A78;
-  border-radius: 25%;
+  background-color: #2B7A78;
+  border-radius: 50%;
   width: 2rem;
   height: 2rem;
   
@@ -25,7 +24,7 @@ const HomeButtonContainer = styled.div`
 
   &:hover {
     background-color: #2B7A78;
-    border: 3px solid #2B7A78;
+    box-shadow: 0 0 0.4rem 0.1rem #17252A;
   }
 
   &>*:first-child {
@@ -38,7 +37,7 @@ const HomeButton = () => {
   return (
     <HomeButtonContainer>
       <NavLink to="/">
-        <HomeLogo width={24} height={28} fill='#17252A'/>
+        <HomeLogo width={32} height={32} fill='#17252A'/>
       </NavLink>
     </HomeButtonContainer>
   )

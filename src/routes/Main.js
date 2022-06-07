@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { motion } from 'framer-motion'
+
 import HomeButton from '../components/HomeButton'
-import LogoComponent from '../components/LogoComponent'
+import BrandNameComponent from '../components/BrandNameComponent'
 import SocialMedIcons from '../components/SocialMedIcons'
-import { PikachuLogo } from '../components/Svgs'
+import { MainLogo } from '../components/Svgs'
+import IntroComponent from '../components/IntroComponent'
+
+
 
 const MainContainer = styled.div`
   background: ${props => props.theme.body};
@@ -22,7 +27,7 @@ const Container = styled.div`
   padding: 2rem;
 `
 
-const Contact = styled(NavLink)`
+const ButtonContact = styled.a`
   position: absolute;
   color: ${props => props.theme.text};
   text-decoration: none;
@@ -32,8 +37,8 @@ const Contact = styled(NavLink)`
   z-index: 1; 
 `
 
-const Videos = styled(NavLink)`
-  color: ${props => props.theme.text};
+const ButtonVideos = styled(NavLink)`
+  color: ${props => props.isClick ? props.theme.secondary : props.theme.text};
   text-decoration: none;
   position: absolute;
 
@@ -43,7 +48,7 @@ const Videos = styled(NavLink)`
   z-index: 1;
 `
 
-const Experiences = styled(NavLink)`
+const ButtonExperiences = styled(NavLink)`
   color: ${props => props.theme.text};
   text-decoration: none;
   position: absolute;
@@ -54,7 +59,7 @@ const Experiences = styled(NavLink)`
   z-index: 1;
 `
 
-const BottomSection = styled.div`
+const FooterContainer = styled.div`
   position: absolute;
   display: flex;
   justify-content: space-evenly;
@@ -65,82 +70,140 @@ const BottomSection = styled.div`
   width: 100%;
 `
 
-const Skills = styled(NavLink)`
+const ButtonSkills = styled(NavLink)`
   color: ${props => props.theme.text};
   text-decoration: none;
   z-index: 1;
 `
-const About = styled(NavLink)`
-  color: ${props => props.theme.text};
+const ButtonAbout = styled(NavLink)`
+  color: ${props => props.isClick ? props.theme.secondary : props.theme.text};
   text-decoration: none;
   z-index: 1;
 `
+
+const rotate = keyframes`
+  from{
+    transform: rotate(0deg);
+  } to{
+    transform: rotate(360deg);
+  }
+`
+
 
 const CenterImage = styled.button`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: ${props => props.isClick ? '85%' : '50%'};
+  left: ${props => props.isClick ? '50%' : '50%'};
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
-  background: none;
+  background: transparent;
+  cursor: pointer;
 
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease;  
+ 
+  z-index: 3;
+  &>:first-child{
+    animation: ${rotate} 3s linear infinite;
+  }
 
   &>:last-child{
+    display: ${props => props.isClick ? 'none' : 'inline-block'};
     padding-top: 1rem;
   }
+`
+
+const DarkContainer = styled.div`
+  position: absolute;
+  background: #000;
+  top: 0;
+  bottom: 0;
+  width: ${props => props.isClick ? '50%' : '0%'};
+  height: ${props => props.isClick ? '100%' : '0%'};
+  left: 50%;
+
+  z-index: 1;
+  transition: height 0.8s ease, width 0.8s ease 0.5s;
 `
 
 
 
 const Main = () => {
+  const [click, setClick] = useState(false)
+  const handleClick = () => setClick(!click)
+
   return (
     <MainContainer>
+      <DarkContainer isClick={click} />
       <Container>
         <HomeButton />
-        <LogoComponent />
-        <SocialMedIcons />
-        
-        <CenterImage>
-          <PikachuLogo width={100} height={100} fill='currentColor'/>
+        <BrandNameComponent />
+        <SocialMedIcons theme={click? 'dark': 'light'}/>
+        <CenterImage isClick={click}>
+          <MainLogo onClick={()=>handleClick()} width={click ? 80: 220} height={click ? 80: 220} fill='violet'/>
           <span>touch me</span>
         </CenterImage>
 
-        <Contact target="_blank" to={"//mailto:rizkyananda007@gmail.com"}>
-          <h2>
+        <ButtonContact target="_blank" href="mailto:rizkyananda007@gmail.com" rel="noopener noreferrer">
+          <motion.h2 
+          whileHover={{scale: 1.4}}
+          whileTap={{scale: 0.9}}
+          >
             Hello there ...
-          </h2>
-        </Contact>
+          </motion.h2>
+        </ButtonContact>
 
-        <Videos to={"/videos"}>
-          <h2>
+        <ButtonVideos to={"/videos"} isClick={click}>
+          <motion.h2 
+          whileHover={{scale: 1.4}}
+          whileTap={{scale: 0.9}} 
+          >
             VIDEOS
-          </h2>
-        </Videos>
-        <Experiences to={"/experiences"}>
-          <h2>
+          </motion.h2>
+
+        </ButtonVideos>
+        
+
+        <ButtonExperiences to={"/experiences"} >
+          <motion.h2 
+          whileHover={{scale: 1.4}}
+          whileTap={{scale: 0.9}} 
+          >
             EXPERIENCES
-          </h2>
-        </Experiences>
 
-        <BottomSection>
-          <Skills to={"/skills"}>
-            <h2>
+          </motion.h2>
+        </ButtonExperiences>
+
+        <FooterContainer>
+          <ButtonSkills to={"/skills"} >
+            <motion.h2 
+            whileHover={{scale: 1.4}}
+            whileTap={{scale: 0.9}} 
+            >
               Skills.
-            </h2>
-          </Skills>
-          <About to={"/about"}>
-            <h2>
+            
+            </motion.h2>
+          </ButtonSkills>
+
+
+          <ButtonAbout to={"/about"} isClick={click}>
+            <motion.h2 
+            whileHover={{scale: 1.4}}
+            whileTap={{scale: 0.9}} 
+            >
               About.
-            </h2>
-          </About>
+              
+            </motion.h2>
+          </ButtonAbout>
 
 
-        </BottomSection>
+        </FooterContainer>
       </Container>
+      {click ? <IntroComponent isClick={click} /> : null}
     </MainContainer>
   )
 }
