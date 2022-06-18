@@ -18,9 +18,9 @@ const App = () => {
   return <>
     <GlobalStyles />
       <ThemeProvider theme={myTheme}>
-        <BGMSound />        
-        <AnimatePresence exitBeforeEnter>
+        <BGMSound />    
 
+        <AnimatePresence exitBeforeEnter>
           <Routes location={location} key={location.pathname}>
             <Route exact path="/" element={<Main/>}/>
             <Route exact path="/about" element={<AboutPage />}/>

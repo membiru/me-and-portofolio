@@ -8,7 +8,7 @@
             }
         },
         "color": {
-            "value": "#000"
+            "value": "#fff"
         },
         "shape": {
             "type": "char",
@@ -22,7 +22,7 @@
         },
         "stroke": {
             "width": 1,
-            "color": "#000"
+            "color": "#fff"
         },
         "opacity": {
             "value": 0.5,
@@ -30,7 +30,7 @@
             "anim": {
                 "enable": true,
                 "speed": 1,
-                "opacity_min": 0.1,
+                "opacity_min": 0.3,
                 "sync": false
             }
         },
@@ -47,8 +47,8 @@
         "line_linked": {
             "enable": true,
             "distance": 150,
-            "color": "#000",
-            "opacity": 0.4,
+            "color": "#fff",
+            "opacity": 0.3,
             "width": 1
         },
         "move": {

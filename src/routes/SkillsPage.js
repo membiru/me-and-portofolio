@@ -13,7 +13,7 @@ import BigText from '../components/BigText'
 
 
 const Container = styled.div`
-  background: ${props => props.theme.secondary};
+  background: ${props => props.theme.primary};
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -22,9 +22,9 @@ const Container = styled.div`
   align-items: center;
 `
 const Grid = styled.div`
-  border: 2px solid ${props => props.theme.primary};
-  color: ${props => props.theme.primary};
-  background: ${props => props.theme.secondary};
+  border: 2px solid ${props => props.theme.secondary};
+  color: ${props => props.theme.secondary};
+  background: ${props => props.theme.primary};
   padding: 2rem;
   width: 30vw;
   height: 60vh;
@@ -39,8 +39,8 @@ const Grid = styled.div`
   z-index: 3;
 
   &:hover{
-    color: ${props => props.theme.secondary};
-    background: ${props => props.theme.primary};
+    color: ${props => props.theme.primary};
+    background: ${props => props.theme.secondary};
   }
 `
 const TitleContent = styled.h2`
@@ -48,10 +48,10 @@ const TitleContent = styled.h2`
   justify-content: center;
   align-items: center;
   font-size: calc(1em + 1vw);
-  fill: ${props => props.theme.primary};
+  fill: ${props => props.theme.secondary};
   ${Grid}: hover &{
     &>*{
-      fill: ${props => props.theme.secondary};
+      fill: ${props => props.theme.primary};
     }
   }
 
@@ -60,7 +60,7 @@ const TitleContent = styled.h2`
   }
 `
 const DescContent = styled.div`
-  color: ${props => props.theme.primary};
+  color: ${props => props.theme.secondary};
   font-size: calc(0.5em + 1vw);
   padding: 0.5rem 0;
 
@@ -73,7 +73,7 @@ const DescContent = styled.div`
   }
 
   ${Grid}: hover &{
-    color: ${props => props.theme.secondary};
+    color: ${props => props.theme.primary};
   }
 `
 
@@ -82,61 +82,60 @@ const DescContent = styled.div`
 const SkillsPage = () => {
   return (
     <ThemeProvider theme={myTheme}>
-      <BrandNameComponent theme='light'/>
-      <SocialMedIcons theme='light'/>
+      <BrandNameComponent theme='dark'/>
+      <SocialMedIcons theme='dark'/>
       <HomeButton /> 
       <ParticleComponent preset={presetParticles} />
 
       <Container>
         <Grid>
           <TitleContent>
-            <DevelopeLogo width={36} height={36}/> Programmer
+            <DevelopeLogo width={36} height={36}/> Programming
           </TitleContent>
           
           <DescContent>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            I've studied various programming languages in college and many bootcamp. From web to mobile, I've learned a lot of things.
           </DescContent>
 
           <DescContent>
-            <strong> I like programming </strong>
-            <ul>
-              <li>
-                Frontend
-              </li>
-              <li>
-                Backend 
-              </li>
-            </ul>
+            <strong> Skills </strong>
+            <p>HTML, JS, PHP, Kotlin, Java, SASS, CodeIgniter, React, Firebase etc.</p>
           </DescContent>
 
           <DescContent>
             <strong> Tools </strong>
-            <p> Vsc, Sublime, Android Studio, Github</p>
+            <p> VSC, Android Studio, Github etc.</p>
           </DescContent>
 
         </Grid>
         
         <Grid>
           <TitleContent>
-            <DesignLogo width={36} height={36} /> Designer
+            <DesignLogo width={36} height={36} /> Design
           </TitleContent>
           
           <DescContent>
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-          </DescContent>
+            Basically, I like to draw since I was little. I tried to learn design for the first time using a vector-based tool, with Adobe Illustrator.          </DescContent>
           <DescContent>
-            <strong> Skills </strong>
-            <p> Html, Js, React, Java, Sass, SQL, Kotlin</p> 
+            <strong> I like to Design </strong>
+            <ul>
+                <li>
+                    Illustrate
+                </li>
+                <li>
+                    Mobile and Web Design
+                </li>
+            </ul>
           </DescContent>
           
           <DescContent>
             <strong> Tools </strong>
             <ul>
               <li>
-                Frontend
+                Adobe Ilustator
               </li>
               <li>
-                Backend 
+                Figma 
               </li>
             </ul>
           </DescContent>

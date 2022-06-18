@@ -112,11 +112,16 @@ const CenterImage = styled.button`
     fill: ${props => props.theme.primary};
   }
 
+  &>:first-child:hover{
+    animation: ${rotate} 1s ease-in-out infinite;
+  }
+
   &>:last-child{
     display: ${props => props.isClick ? 'none' : 'inline-block'};
     padding-top: 0rem;
-    font-size: calc(0.2rem + 1vw);
-    font-weight: 100;
+    font-size: calc(0.5rem + 1vw);
+    font-weight: 200;
+    font-variant: small-caps;
     color: ${props => props.theme.primary};
   }
 `
@@ -151,7 +156,7 @@ const Main = () => {
       
         <CenterImage onClick={()=>handleClick()} isClick={click}>
           <MainLogo width={click ? 100: 250} height={click ? 100: 250} />
-          <span>touch me</span>
+          <span>try to touch me</span>
         </CenterImage>
  
 

@@ -1,8 +1,4 @@
 {
-    "fullScreen": {
-        "enable": true,
-        "zIndex": 1
-    },
     "particles": {
         "number": {
             "value": 80,
@@ -18,7 +14,7 @@
             "type": "circle"
         },
         "opacity": {
-            "value": 0.5,
+            "value": 0.3,
             "random": true,
             "anim": {
                 "enable": true,
@@ -41,7 +37,7 @@
             "enable": true,
             "distance": 150,
             "color": "#ffffff",
-            "opacity": 0.4,
+            "opacity": 0.2,
             "width": 1
         },
         "move": {
@@ -61,14 +57,14 @@
             "particles": {
                 "enable": true,
                 "color": "#ffff00",
-                "frequency": 0.05,
-                "opacity": 1
+                "frequency": 0.09,
+                "opacity": 0.4
             },
             "lines": {
                 "enable": true,
                 "color": "#ff0000",
                 "frequency": 0.005,
-                "opacity": 1
+                "opacity": 0.6
             }
         }
     },

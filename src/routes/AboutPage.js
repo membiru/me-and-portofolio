@@ -8,13 +8,13 @@ import HomeButton from '../components/HomeButton'
 import ParticleComponent from '../components/ParticleComponent'
 import Image from '../assets/images/profile-img.png'
 
-import presetParticles from "../config/tsparticles-presets/snow.json"
+import presetParticles from "../config/tsparticles-presets/twinkle.json"
 import { keyframes } from 'styled-components'
 import BigText from '../components/BigText'
 
 
 const Container = styled.div`
-  background: ${props => props.theme.primary};
+  background: ${props => props.theme.secondary};
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -41,8 +41,8 @@ const AnimationImage = styled.div`
 `
 
 const MainContent = styled.div`
-  border: 2px solid ${props => props.theme.secondary};
-  color: ${props => props.theme.secondary};
+  border: 2px solid ${props => props.theme.primary};
+  color: ${props => props.theme.primary};
   padding: 2rem;
   width: 50vw;
   height: 60vh;
@@ -66,8 +66,8 @@ const AboutPage = () => {
   return (
     <ThemeProvider theme={myTheme}>
       <Container>
-        <BrandNameComponent theme='dark'/>
-        <SocialMedIcons theme='dark'/>
+        <BrandNameComponent />
+        <SocialMedIcons />
         <HomeButton /> 
         <ParticleComponent preset={presetParticles} />
         
