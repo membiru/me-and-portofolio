@@ -120,7 +120,7 @@ const SkillsPage = () => {
             <strong> I like to Design </strong>
             <ul>
                 <li>
-                    Illustrate
+                    Vector Illustration
                 </li>
                 <li>
                     Mobile and Web Design

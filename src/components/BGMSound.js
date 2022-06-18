@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import audioSrc from "../assets/audio/Talking-To-The-Moon.mp3"
+import audioSrc from "../assets/audio/ChloePawapua_Remixed.mp3"
 
 const Container = styled.div`
     display: flex;

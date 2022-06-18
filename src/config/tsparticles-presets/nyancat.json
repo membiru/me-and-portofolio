@@ -1,8 +1,4 @@
 {
-    "fullScreen": {
-        "enable": true,
-        "zIndex": 1
-    },
     "particles": {
         "number": {
             "value": 100,
@@ -12,7 +8,7 @@
             }
         },
         "color": {
-            "value": "#ffffff"
+            "value": "#8BD8BD"
         },
         "shape": {
             "type": "star",
@@ -104,7 +100,7 @@
     },
     "retina_detect": true,
     "background": {
-        "color": "#043564",
+        "color": "#243665",
         "image": "url('http://vincentgarreau.com/particles.js/assets/img/kbLd9vb_new.gif')",
         "position": "0 50%",
         "repeat": "no-repeat",

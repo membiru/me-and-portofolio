@@ -49,7 +49,7 @@ const MainContent = styled.div`
 
   z-index: 3;
   line-height: 1.5;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   font-size: calc(1rem + 0.5vw);
@@ -60,6 +60,12 @@ const MainContent = styled.div`
   top: 10rem;
 
   font-family: 'Source Code Pro', monospace;
+
+  p {
+    text-align: center;
+    font-size: calc(0.5rem + 0.5vw);
+    font-variant: small-caps;
+  }
 `
 
 const AboutPage = () => {
@@ -80,6 +86,8 @@ const AboutPage = () => {
           I'm a full stack developer. I'm using React, React Native, NodeJS, ExpressJS and many other technologies.
           <br/><br/>
           I'm also a fan of music and also love drawing.
+          <br/><br/>
+          <p>-sorry, i'm too lazy to take some picture.</p>
         </MainContent>
 
         <BigText text="ABOUT" top="10%" right="5%" />
