@@ -16,7 +16,7 @@ const App = () => {
   const location = useLocation();
 
   return <>
-      <GlobalStyles />
+    <GlobalStyles />
       <ThemeProvider theme={myTheme}>
         <BGMSound />        
         <AnimatePresence exitBeforeEnter>
@@ -31,8 +31,9 @@ const App = () => {
           </Routes>
         </AnimatePresence>
       </ThemeProvider>
-    </>
-  
+
+  </>
 }
+
 
 export default App;

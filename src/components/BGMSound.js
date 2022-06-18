@@ -10,7 +10,7 @@ const Container = styled.div`
     cursor: pointer;
 
     position: fixed;
-    z-index:10;
+    z-index: 10;
 
     &>*:nth-child(1) {
         animation-delay: 0.1s;

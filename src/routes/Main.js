@@ -147,10 +147,13 @@ const Main = () => {
         <HomeButton />
         <BrandNameComponent />
         <SocialMedIcons theme={click? 'dark': 'light'}/>
+
+      
         <CenterImage onClick={()=>handleClick()} isClick={click}>
           <MainLogo width={click ? 100: 250} height={click ? 100: 250} />
           <span>touch me</span>
         </CenterImage>
+ 
 
         <ButtonContact isClick={click} target="_blank" href="mailto:rizkyananda007@gmail.com" rel="noopener noreferrer">
           <motion.h2 
