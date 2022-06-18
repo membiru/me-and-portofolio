@@ -9,6 +9,7 @@ import HomeButton from '../components/HomeButton'
 import ParticleComponent from '../components/ParticleComponent'
 
 import presetParticles from "../config/tsparticles-presets/char.json"
+import BigText from '../components/BigText'
 
 
 const Container = styled.div`
@@ -142,6 +143,7 @@ const SkillsPage = () => {
 
         </Grid>
 
+        <BigText top='80%' right='30%' text='SKILLS'/>
       </Container>
     </ThemeProvider>
   )
