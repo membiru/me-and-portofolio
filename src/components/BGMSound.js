@@ -46,7 +46,7 @@ const AudioPulseLine = styled.div`
     margin: 0 0.1rem;
 
     animation: ${play} 1s ease infinite;
-    animation-play-state: ${props => props.isClick ? "running" : "paused"};
+    animation-play-state: ${props => props.isClick ? "playing" : "paused"};
 `
 
 

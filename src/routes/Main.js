@@ -154,18 +154,37 @@ const Main = () => {
 
         <ButtonContact isClick={click} target="_blank" href="mailto:rizkyananda007@gmail.com" rel="noopener noreferrer">
           <motion.h2 
-          whileHover={{scale: 1.4}}
+          initial={{ 
+            y: -200, 
+            transition: { type:'spring', duration: 1.5, delay: 1 } 
+          }}
+          animate={{
+            y: 0,
+            transition: { type:'spring', duration: 1.5, delay: 1 }
+          }}
+          whileHover={{scale: 1.2}}
           whileTap={{scale: 0.9}}
           >
+
             Hello there ...
+          
           </motion.h2>
         </ButtonContact>
 
         <ButtonVideos to={"/videos"} isClick={click}>
           <motion.h2 
-          whileHover={{scale: 1.4}}
+          initial={{ 
+            y: -200, 
+            transition: { type:'spring', duration: 1.5, delay: 1 } 
+          }}
+          animate={{
+            y: 0,
+            transition: { type:'spring', duration: 1.5, delay: 1 }
+          }}
+          whileHover={{scale: 1.2}}
           whileTap={{scale: 0.9}} 
           >
+
             VIDEOS
           </motion.h2>
 
@@ -174,7 +193,15 @@ const Main = () => {
 
         <ButtonExperiences to={"/experiences"} >
           <motion.h2 
-          whileHover={{scale: 1.4}}
+          initial={{ 
+            y: -200, 
+            transition: { type:'spring', duration: 1.5, delay: 1 } 
+          }}
+          animate={{
+            y: 0,
+            transition: { type:'spring', duration: 1.5, delay: 1 }
+          }}
+          whileHover={{scale: 1.2}}
           whileTap={{scale: 0.9}} 
           >
             EXPERIENCES
@@ -182,10 +209,19 @@ const Main = () => {
           </motion.h2>
         </ButtonExperiences>
 
+
         <FooterContainer>
           <ButtonSkills to={"/skills"} >
             <motion.h2 
-            whileHover={{scale: 1.4}}
+            initial={{ 
+              y: 200, 
+              transition: { type:'spring', duration: 1.5, delay: 1 } 
+            }}
+            animate={{
+              y: 0,
+              transition: { type:'spring', duration: 1.5, delay: 1 }
+            }}
+            whileHover={{scale: 1.2}}
             whileTap={{scale: 0.9}} 
             >
               Skills.
@@ -195,7 +231,15 @@ const Main = () => {
 
 
           <ButtonAbout to={"/about"} isClick={click}>
-            <motion.h2 
+            <motion.h2
+            initial={{ 
+              y: 200, 
+              transition: { type:'spring', duration: 1.5, delay: 1 } 
+            }}
+            animate={{
+              y: 0,
+              transition: { type:'spring', duration: 1.5, delay: 1 }
+            }}
             whileHover={{scale: 1.4}}
             whileTap={{scale: 0.9}} 
             >
