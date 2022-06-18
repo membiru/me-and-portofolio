@@ -35,7 +35,7 @@ const SocialMedIcons = (props) => {
             animate= {{ scale: [0,1,1.5,1] }}
             transition= {{ type: 'spring', duration:1, delay:1 }}
         >
-            <a target="_blank" href="https://www.github.com/rizkyananda" rel="noopener noreferrer">
+            <a target="_blank" href="https://www.github.com/membiru" rel="noopener noreferrer">
                 <GithubLogo width={25} height={25} fill={props.theme === 'dark' ? myTheme.secondary: myTheme.primary}/>
             </a>
         </motion.div>
