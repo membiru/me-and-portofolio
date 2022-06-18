@@ -1,3 +1,15 @@
+# TRY MAKE PORTOFOLIO USING REACT JS
+
+This project used for education only. To try make web with React JS.
+
+
+### Thanks to CodeBucks for his video tutorial 
+https://youtu.be/jcohAIaSy2M
+
+### Thanks to Yuda Arkana for audio music
+https://youtu.be/KSFNPTwS28o
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
