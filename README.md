@@ -1,4 +1,4 @@
-# TRY MAKE PORTOFOLIO USING REACT JS
+# PORTOFOLIO USING REACT JS
 
 This project used for education only. To try make web with React JS.
 
